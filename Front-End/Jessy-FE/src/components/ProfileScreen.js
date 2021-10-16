@@ -4,9 +4,9 @@ import axios from 'axios'
 
 const ProfileScreen = ({navigation}) => {
   const [title, setTitle] = useState('')
-  const [rating, setRating] = useState(3)
+  const [rating, setRating] = useState(5)
   const [dummy, setDummy] = useState([
-    {name: 'saman kumara', comment: 'One of the Best Tour guide I have ever met.'}
+    {name: 'Henry Nichols', comment: 'One of the Best Tour guide I have ever met.'}
   ])
 
   const onChangeText = text => {
@@ -19,7 +19,7 @@ const ProfileScreen = ({navigation}) => {
     }
     axios.post('https://seentiment-jessy.herokuapp.com/api/SentimentAnalysis', data).then(response => {
       setRating(response.data.prediction)
-      setDummy([...dummy,{name: 'chamal janadara', comment: data.comment}])
+      setDummy([...dummy,{name: 'Chamal Janadara', comment: data.comment}])
     }).catch(error => {
       console.log(error)
     })
@@ -48,7 +48,7 @@ const ProfileScreen = ({navigation}) => {
                 <Image style={{
                   marginVertical: 15
                 }}
-                       source={require('./img.png')}
+                       source={require('./user.png')}
                        width={40}
                        height={40}
                        resizeMethod='auto'/>
@@ -60,7 +60,7 @@ const ProfileScreen = ({navigation}) => {
                   marginVertical: 1,
                   fontSize: 18
                 }}>
-                  Saman Kumara
+                  MUDIYANSELAGE JAYATILAKA
                 </Text>
                 <Text style={{
                   marginVertical: 1,
@@ -81,7 +81,7 @@ const ProfileScreen = ({navigation}) => {
                       marginTop: 6
                     }
                   ]}>
-                    10,000 LKR / Tour
+                    400 USD / Tour
                   </Text>
                 </View>
               </View>
@@ -98,9 +98,7 @@ const ProfileScreen = ({navigation}) => {
             color: '#808080',
             fontSize: 15
           }}>
-            We are going to implement this schedule by creating 20 posts for facebook and 30 various video content from
-            different content creators in YouTube. By analyzing the facebook posts published by the facebook page owners
-            we are creating another kind of concept for version 3. Below are the content we are going to create.
+            Tour guides lead visitors, individually or in groups, on tours less than a day in length. Tour guides ensure that itineraries are met and that customers are being informed in an entertaining manner the location they are touring. They are also responsible for ensuring the safety of the group and ensuring that tour groups remain together.
           </Text>
           <Text style={{
             color: 'black',
@@ -151,7 +149,7 @@ const ProfileScreen = ({navigation}) => {
                   <Image style={{
                     marginVertical: 15
                   }}
-                         source={require('./img.png')}
+                         source={require('./user.png')}
                          width={20}
                          height={20}
                          resizeMethod='auto'/>
@@ -250,7 +248,7 @@ const ProfileScreen = ({navigation}) => {
             marginTop: 20
           }}>
             <TouchableOpacity onPress={() => {
-              navigation.navigate('TourGuideScreen')
+              navigation.navigate('QuizScreen')
             }}
                               style={{
                                 flex: 1,

@@ -129,7 +129,7 @@ const QuizScreen = ({navigation}) => {
         // }
         onPress={() => {
           // collectingData();
-          navigation.navigate("TourGuideScreen")
+          navigation.navigate("TourGuideScreenGampaha")
         }}
         style={[
           styles.button,
@@ -160,7 +160,7 @@ const QuizScreen = ({navigation}) => {
         // }
         onPress={() => {
           // collectingData();
-          navigation.navigate("TourGuideScreen")
+          navigation.navigate("TourGuideScreenKandy")
         }}
         style={[
           styles.button,

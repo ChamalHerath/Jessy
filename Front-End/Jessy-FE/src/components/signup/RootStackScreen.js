@@ -8,7 +8,14 @@ import SignUpScreen from "./SignUp";
 import HomeScreen from "../HomeScreen";
 import QuizScreen from "../QuizScreen";
 import TourGuideScreen from "../TourGuideScreen";
+import TourGuideScreenKandy from "../TourGuideScreenKandy";
+import TourGuideScreenGampaha from "../TourGuideScreenGampaha";
 import ProfileScreen from "../ProfileScreen";
+import ProfileScreen1 from "../ProfileScreen1";
+import ProfileScreen2 from "../ProfileScreen2";
+import ProfileScreen3 from "../ProfileScreen3";
+import ProfileScreenKandy from "../ProfileScreenKandy";
+import ProfileScreenGampaha from "../ProfileScreenGampaha";
 
 const RootStack = createStackNavigator();
 
@@ -21,6 +28,13 @@ const RootStackScreen = ({navigation}) => (
     <RootStack.Screen name="QuizScreen" component={QuizScreen}/>
     <RootStack.Screen name="TourGuideScreen" component={TourGuideScreen}/>
     <RootStack.Screen name="ProfileScreen" component={ProfileScreen}/>
+    <RootStack.Screen name="ProfileScreen1" component={ProfileScreen1}/>
+    <RootStack.Screen name="ProfileScreen2" component={ProfileScreen2}/>
+    <RootStack.Screen name="ProfileScreen3" component={ProfileScreen3}/>
+    <RootStack.Screen name="ProfileScreenKandy" component={ProfileScreenKandy}/>
+    <RootStack.Screen name="ProfileScreenGampaha" component={ProfileScreenGampaha}/>
+    <RootStack.Screen name="TourGuideScreenKandy" component={TourGuideScreenKandy}/>
+    <RootStack.Screen name="TourGuideScreenGampaha" component={TourGuideScreenGampaha}/>
   </RootStack.Navigator>
 );
 
