@@ -16,7 +16,7 @@ router.get("/view_all", async (req, res) => {
     const package = await Package.find();
     res.json(package);
   } catch (error) {
-    res.json({ message: "Error while finding the packages in the collection" });
+    res.json({message: "Error while finding the packages in the collection"});
   }
 });
 
@@ -26,7 +26,7 @@ router.get("/packageID", async (req, res) => {
     const package = await Package.findById(req.params.packageID);
     res.json(package);
   } catch (error) {
-    res.json({ message: error });
+    res.json({message: error});
   }
 });
 

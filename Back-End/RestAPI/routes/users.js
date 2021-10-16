@@ -13,7 +13,7 @@ router.get("/new_user", async (req, res) => {
     const users = await Users.find();
     res.json(users);
   } catch (error) {
-    res.json({ message: "Error while finding the user in the collection" });
+    res.json({message: "Error while finding the user in the collection"});
   }
 });
 
@@ -37,17 +37,17 @@ router.post("/", async (req, res) => {
     const savedUser = await post.save();
     res.json(savedUser);
   } catch (error) {
-    res.json({ message: "Error While saving the User" });
-    res.json({ message: error });
+    res.json({message: "Error While saving the User"});
+    res.json({message: error});
   }
 });
 
 //deleting a user from the collection
 router.delete("/:email", async (req, res) => {
   try {
-    const user = await Users.remove({ _id: req.params.email });
+    const user = await Users.remove({_id: req.params.email});
   } catch (error) {
-    res.json({ message: "Error while deleting" });
+    res.json({message: "Error while deleting"});
   }
 });
 
@@ -64,7 +64,7 @@ router.delete("/:email", async (req, res) => {
 // User login api
 router.post("/login", (req, res) => {
   // Find user with requested email
-  Users.findOne({ email: req.body.email }, function (err, user) {
+  Users.findOne({email: req.body.email}, function (err, user) {
     if (user === null) {
       return res.status(400).send({
         message: "User not found.",
@@ -108,7 +108,7 @@ router.post("/signup", (req, res, next) => {
       });
     }
   });
-}); 
+});
 
 
 module.exports = router;

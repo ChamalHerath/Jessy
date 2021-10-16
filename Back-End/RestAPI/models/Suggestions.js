@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 var crypto = require("crypto");
 
 const SuggestionsSchema = mongoose.Schema({
-   locationID: {
+  locationID: {
     type: "string",
     required: true,
   },
@@ -14,7 +14,7 @@ const SuggestionsSchema = mongoose.Schema({
     type: "string",
     required: true,
   },
-  
+
 });
 
 module.exports = mongoose.model("Suggestions", SuggestionsSchema);

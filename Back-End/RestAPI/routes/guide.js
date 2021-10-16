@@ -13,7 +13,7 @@ router.get("/guide_list", async (req, res) => {
     const guide = await Guide.find();
     res.json(guide);
   } catch (error) {
-    res.json({ message: "Error while finding the guide in the collection" });
+    res.json({message: "Error while finding the guide in the collection"});
   }
 });
 
@@ -23,7 +23,7 @@ router.get("/guideID", async (req, res) => {
     const guide = await Guide.findById(req.params.guideID);
     res.json(guide);
   } catch (error) {
-    res.json({ message: error });
+    res.json({message: error});
   }
 });
 
@@ -53,7 +53,7 @@ router.post("/", async (req, res) => {
     res.json(savedPost);
   } catch (err) {
     console.log("err" + err);
-    res.json({ message: "Error While saving the post" });
+    res.json({message: "Error While saving the post"});
     res.status(500).send(err);
   }
 });

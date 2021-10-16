@@ -9,8 +9,8 @@ const port = 3000;
 mongoose
   .connect(
     process.env.DB_CONNECTION,
-    { useNewUrlParser: true },
-    { useUnifiedTopology: true }
+    {useNewUrlParser: true},
+    {useUnifiedTopology: true}
   )
   .then(() => {
     console.log("DB Connected");
@@ -21,7 +21,7 @@ mongoose
 
 // Middleware configuration
 app.use(cors());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 const bodyParser = require("express").json;

@@ -29,5 +29,5 @@ expo start to run the application (You can change the platform if necessary)
 
 ## 2. Backend
 
-backend has 2 components, The main API and the machine learning structure.
-Machine learning contains the sentiment analysis part and the model
+backend has 2 components, The main API and the machine learning structure. Machine learning contains the sentiment
+analysis part and the model

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {FlatList, Image, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View,} from "react-native";
+import {Platform, StyleSheet, Text, TouchableOpacity, View,} from "react-native";
 import axios from "axios";
 import * as Animatable from "react-native-animatable";
 

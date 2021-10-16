@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Alert, Platform, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
+import {Platform, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
 import * as Animatable from "react-native-animatable";
 // import LinearGradient from "react-native-linear-gradient";
 import {LinearGradient} from 'expo-linear-gradient';

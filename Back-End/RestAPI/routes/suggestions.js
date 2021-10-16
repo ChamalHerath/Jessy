@@ -29,7 +29,7 @@ router.get("/name", async (req, res) => {
     const suggest = await Suggestions.findById(req.params.name);
     res.json(suggest);
   } catch (error) {
-    res.json({ message: error });
+    res.json({message: error});
   }
 });
 
@@ -47,7 +47,7 @@ router.post("/", async (req, res) => {
     res.json(savedPost);
   } catch (err) {
     console.log("err" + err);
-    res.json({ message: "Error While saving the post" });
+    res.json({message: "Error While saving the post"});
     res.status(500).send(err);
   }
 });
