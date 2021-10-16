@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Platform, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
+import {Alert, Platform, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
 import * as Animatable from "react-native-animatable";
 // import LinearGradient from "react-native-linear-gradient";
 import {LinearGradient} from 'expo-linear-gradient';
@@ -116,14 +116,14 @@ const SignIn = ({navigation}) => {
 
     signIn(userName, password);
 
-    // if (data.username.length === 0 || data.password.length === 0) {
-    //   Alert.alert(
-    //     "Wrong Input!",
-    //     "Username or password field cannot be empty.",
-    //     [{text: "Okay"}]
-    //   );
-    //   return;
-    // }
+    if (data.username.length === 0 || data.password.length === 0) {
+      Alert.alert(
+        "Wrong Input!",
+        "Username or password field cannot be empty.",
+        [{text: "Okay"}]
+      );
+      return;
+    }
 
     // if (foundUser.length == 0) {
     //   Alert.alert("Invalid User!", "Username or password is incorrect.", [

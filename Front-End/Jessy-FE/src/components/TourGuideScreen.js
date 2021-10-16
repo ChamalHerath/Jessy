@@ -42,7 +42,7 @@ const TourGuideScreen = ({navigation}) => {
               }}>
                 Rating: 5.0
               </Text>
-              <TouchableOpacity style={[
+              <View style={[
                 styles.button,
                 {
                   borderColor: "white",
@@ -56,7 +56,7 @@ const TourGuideScreen = ({navigation}) => {
                 ]}>
                   View Profile
                 </Text>
-              </TouchableOpacity>
+              </View>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={styles.item}
@@ -87,7 +87,7 @@ const TourGuideScreen = ({navigation}) => {
               }}>
                 Rating: 5.0
               </Text>
-              <TouchableOpacity style={[
+              <View style={[
                 styles.button,
                 {
                   borderColor: "white",
@@ -101,7 +101,7 @@ const TourGuideScreen = ({navigation}) => {
                 ]}>
                   View Profile
                 </Text>
-              </TouchableOpacity>
+              </View>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={styles.item}
@@ -132,7 +132,7 @@ const TourGuideScreen = ({navigation}) => {
               }}>
                 Rating: 5.0
               </Text>
-              <TouchableOpacity style={[
+              <View style={[
                 styles.button,
                 {
                   borderColor: "white",
@@ -146,7 +146,7 @@ const TourGuideScreen = ({navigation}) => {
                 ]}>
                   View Profile
                 </Text>
-              </TouchableOpacity>
+              </View>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={styles.item}
@@ -177,7 +177,7 @@ const TourGuideScreen = ({navigation}) => {
               }}>
                 Rating: 5.0
               </Text>
-              <TouchableOpacity style={[
+              <View style={[
                 styles.button,
                 {
                   borderColor: "white",
@@ -191,7 +191,7 @@ const TourGuideScreen = ({navigation}) => {
                 ]}>
                   View Profile
                 </Text>
-              </TouchableOpacity>
+              </View>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={styles.item}
@@ -222,7 +222,7 @@ const TourGuideScreen = ({navigation}) => {
               }}>
                 Rating: 5.0
               </Text>
-              <TouchableOpacity style={[
+              <View style={[
                 styles.button,
                 {
                   borderColor: "white",
@@ -236,7 +236,7 @@ const TourGuideScreen = ({navigation}) => {
                 ]}>
                   View Profile
                 </Text>
-              </TouchableOpacity>
+              </View>
             </View>
           </TouchableOpacity>
         </View>
