@@ -36,7 +36,7 @@ const SignupLogin = ({navigation}) => {
         <Text style={styles.text}>Sign in with your Account</Text>
         <Text style={styles.rp}>Powered by 2021_014</Text>
         <View style={styles.button}>
-          <TouchableOpacity onPress={() => navigation.navigate("SignInScreen")}>
+          <TouchableOpacity onPress={() => navigation.navigate("Categories")}>
             <LinearGradient
               colors={["#0831d4", "#0131ab"]}
               style={styles.signIn}

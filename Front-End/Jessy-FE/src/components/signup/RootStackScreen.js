@@ -16,6 +16,10 @@ import ProfileScreen2 from "../ProfileScreen2";
 import ProfileScreen3 from "../ProfileScreen3";
 import ProfileScreenKandy from "../ProfileScreenKandy";
 import ProfileScreenGampaha from "../ProfileScreenGampaha";
+import Categories from "../Categories";
+import TourList from "../TourList";
+import SignInGuide from "./SignInGuide";
+import SignUpGuide from "./SignUpGuide";
 
 const RootStack = createStackNavigator();
 
@@ -35,6 +39,10 @@ const RootStackScreen = ({navigation}) => (
     <RootStack.Screen name="ProfileScreenGampaha" component={ProfileScreenGampaha}/>
     <RootStack.Screen name="TourGuideScreenKandy" component={TourGuideScreenKandy}/>
     <RootStack.Screen name="TourGuideScreenGampaha" component={TourGuideScreenGampaha}/>
+    <RootStack.Screen name="Categories" component={Categories}/>
+    <RootStack.Screen name="TourList" component={TourList}/>
+    <RootStack.Screen name="SignInGuide" component={SignInGuide}/>
+    <RootStack.Screen name="SignUpGuide" component={SignUpGuide}/>
   </RootStack.Navigator>
 );
 
