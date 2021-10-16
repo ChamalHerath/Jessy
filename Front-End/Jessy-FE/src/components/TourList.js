@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import React, {useState} from "react";
+import {StyleSheet, Text, View} from "react-native";
 
-const TourList = ({ navigation, route }) => {
-  const { data } = route.params;
+const TourList = ({navigation, route}) => {
+  const {data} = route.params;
   const [searchData, setSearchData] = useState();
   const [query, setQuery] = useState();
 
-  
+
   return (
     <View style={styles.container}>
       <Text>Tour List</Text>

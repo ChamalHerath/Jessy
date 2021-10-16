@@ -1,15 +1,5 @@
 import React, {useState} from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-  Platform,
-  StyleSheet,
-  StatusBar,
-  Alert,
-  ActivityIndicator
-} from "react-native";
+import {Alert, Platform, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
 import * as Animatable from "react-native-animatable";
 // import LinearGradient from "react-native-linear-gradient";
 import {LinearGradient} from 'expo-linear-gradient';
@@ -17,11 +7,10 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 import axios from "axios";
 
-import { AuthContext } from "../utils/context";
+import {AuthContext} from "../utils/context";
 
 
-
-const SignIn = ({ navigation }) => {
+const SignIn = ({navigation}) => {
   const [message, setMessage] = useState();
   const [messageType, setMessageType] = useState();
 
@@ -35,7 +24,7 @@ const SignIn = ({ navigation }) => {
     isValidPassword: true,
   });
 
-  const { signIn } = React.useContext(AuthContext);
+  const {signIn} = React.useContext(AuthContext);
 
   //   checking the length of the username
   const textInputChange = (val) => {
@@ -100,12 +89,12 @@ const SignIn = ({ navigation }) => {
       .post(url, credentials)
       .then((response) => {
         const results = response.loginInfo;
-        const { message, status, loginInfo } = results;
+        const {message, status, loginInfo} = results;
 
         if (status !== "success") {
           handleMessage(message, status);
         } else {
-          navigation.navigate("Home", { ...loginInfo[0] });
+          navigation.navigate("Home", {...loginInfo[0]});
         }
       })
       .catch((error) => {
@@ -127,26 +116,28 @@ const SignIn = ({ navigation }) => {
 
     signIn(userName, password);
 
-    if (data.username.length == 0 || data.password.length == 0) {
-      Alert.alert(
-        "Wrong Input!",
-        "Username or password field cannot be empty.",
-        [{ text: "Okay" }]
-      );
-      return;
-    }
+    // if (data.username.length === 0 || data.password.length === 0) {
+    //   Alert.alert(
+    //     "Wrong Input!",
+    //     "Username or password field cannot be empty.",
+    //     [{text: "Okay"}]
+    //   );
+    //   return;
+    // }
 
-    if (foundUser.length == 0) {
-      Alert.alert("Invalid User!", "Username or password is incorrect.", [
-        { text: "Okay" },
-      ]);
-      return;
-    }
+    // if (foundUser.length == 0) {
+    //   Alert.alert("Invalid User!", "Username or password is incorrect.", [
+    //     { text: "Okay" },
+    //   ]);
+    //   return;
+    // }
+
+    navigation.navigate("HomeScreen")
   };
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="#009387" barStyle="light-content" />
+      <StatusBar backgroundColor="#009387" barStyle="light-content"/>
       <View style={styles.header}>
         <Text style={styles.text_header}>Welcome!</Text>
       </View>
@@ -170,7 +161,7 @@ const SignIn = ({ navigation }) => {
           Email
         </Text>
         <View style={styles.action}>
-          <FontAwesome name="user-o" size={20} />
+          <FontAwesome name="user-o" size={20}/>
           {/* // color={colors.text} */}
           <TextInput
             placeholder="Your Username / Email"
@@ -187,7 +178,7 @@ const SignIn = ({ navigation }) => {
           />
           {data.check_textInputChange ? (
             <Animatable.View animation="bounceIn">
-              <Feather name="check-circle" color="blue" size={20} />
+              <Feather name="check-circle" color="blue" size={20}/>
             </Animatable.View>
           ) : null}
         </View>
@@ -212,11 +203,11 @@ const SignIn = ({ navigation }) => {
         </Text>
 
         <View style={styles.action}>
-          <Feather name="lock" size={20} />
+          <Feather name="lock" size={20}/>
           <TextInput
             placeholder="Your Password"
             placeholderTextColor="#666666"
-            secureTextEntry={data.secureTextEntry ? true : false}
+            secureTextEntry={data.secureTextEntry}
             style={[
               styles.textInput,
               {
@@ -228,9 +219,9 @@ const SignIn = ({ navigation }) => {
           />
           <TouchableOpacity onPress={updateSecureTextEntry}>
             {data.secureTextEntry ? (
-              <Feather name="eye-off" color="grey" size={20} />
+              <Feather name="eye-off" color="grey" size={20}/>
             ) : (
-              <Feather name="eye" color="grey" size={20} />
+              <Feather name="eye" color="grey" size={20}/>
             )}
           </TouchableOpacity>
         </View>
@@ -243,7 +234,7 @@ const SignIn = ({ navigation }) => {
         )}
 
         <TouchableOpacity>
-          <Text style={{ color: "#1f65b5", marginTop: 15 }}>
+          <Text style={{color: "#1f65b5", marginTop: 15}}>
             Forgot password?
           </Text>
         </TouchableOpacity>

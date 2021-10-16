@@ -1,25 +1,14 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Button,
-  TouchableOpacity,
-  Dimensions,
-  TextInput,
-  Platform,
-  StyleSheet,
-  ScrollView,
-  StatusBar,
-} from "react-native";
+import {Platform, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View,} from "react-native";
 import * as Animatable from "react-native-animatable";
 // import LinearGradient from "react-native-linear-gradient";
 import {LinearGradient} from 'expo-linear-gradient';
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 
-import { AuthContext } from "../utils/context";
+import {AuthContext} from "../utils/context";
 
-const SignUp = ({ navigation }) => {
+const SignUp = ({navigation}) => {
   const [data, setData] = React.useState({
     username: "",
     password: "",
@@ -73,11 +62,11 @@ const SignUp = ({ navigation }) => {
     });
   };
 
-  const { signIn } = React.useContext(AuthContext);
+  const {signIn} = React.useContext(AuthContext);
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="#009387" barStyle="light-content" />
+      <StatusBar backgroundColor="#009387" barStyle="light-content"/>
       <View style={styles.header}>
         <Text style={styles.text_header}>Register Now!</Text>
       </View>
@@ -85,7 +74,7 @@ const SignUp = ({ navigation }) => {
         <ScrollView>
           <Text style={styles.text_footer}>Name</Text>
           <View style={styles.action}>
-            <FontAwesome name="user-o" color="#05375a" size={20} />
+            <FontAwesome name="user-o" color="#05375a" size={20}/>
             <TextInput
               placeholder="Your Username"
               style={styles.textInput}
@@ -94,14 +83,14 @@ const SignUp = ({ navigation }) => {
             />
             {data.check_textInputChange ? (
               <Animatable.View animation="bounceIn">
-                <Feather name="check-circle" color="green" size={20} />
+                <Feather name="check-circle" color="green" size={20}/>
               </Animatable.View>
             ) : null}
           </View>
 
-          <Text style={[styles.text_footer,{marginTop: 35},]}>Email</Text>
+          <Text style={[styles.text_footer, {marginTop: 35},]}>Email</Text>
           <View style={styles.action}>
-            <FontAwesome name="envelope-o" color="#05375a" size={20} />
+            <FontAwesome name="envelope-o" color="#05375a" size={20}/>
             <TextInput
               placeholder="Your Username"
               style={styles.textInput}
@@ -110,14 +99,14 @@ const SignUp = ({ navigation }) => {
             />
             {data.check_textInputChange ? (
               <Animatable.View animation="bounceIn">
-                <Feather name="check-circle" color="green" size={20} />
+                <Feather name="check-circle" color="green" size={20}/>
               </Animatable.View>
             ) : null}
           </View>
 
-          <Text style={[styles.text_footer,{marginTop: 35},]}>Gender</Text>
+          <Text style={[styles.text_footer, {marginTop: 35},]}>Gender</Text>
           <View style={styles.action}>
-            <FontAwesome name="venus-mars" color="#05375a" size={20} />
+            <FontAwesome name="venus-mars" color="#05375a" size={20}/>
             <TextInput
               placeholder="Your Username"
               style={styles.textInput}
@@ -126,14 +115,14 @@ const SignUp = ({ navigation }) => {
             />
             {data.check_textInputChange ? (
               <Animatable.View animation="bounceIn">
-                <Feather name="check-circle" color="green" size={20} />
+                <Feather name="check-circle" color="green" size={20}/>
               </Animatable.View>
             ) : null}
           </View>
 
-          <Text style={[styles.text_footer,{marginTop: 35},]}>Country</Text>
+          <Text style={[styles.text_footer, {marginTop: 35},]}>Country</Text>
           <View style={styles.action}>
-            <FontAwesome name="flag-o" color="#05375a" size={20} />
+            <FontAwesome name="flag-o" color="#05375a" size={20}/>
             <TextInput
               placeholder="Your Username"
               style={styles.textInput}
@@ -142,14 +131,14 @@ const SignUp = ({ navigation }) => {
             />
             {data.check_textInputChange ? (
               <Animatable.View animation="bounceIn">
-                <Feather name="check-circle" color="green" size={20} />
+                <Feather name="check-circle" color="green" size={20}/>
               </Animatable.View>
             ) : null}
           </View>
 
-          <Text style={[styles.text_footer,{marginTop: 35},]}>Passport ID</Text>
+          <Text style={[styles.text_footer, {marginTop: 35},]}>Passport ID</Text>
           <View style={styles.action}>
-            <FontAwesome name="bookmark-o" color="#05375a" size={20} />
+            <FontAwesome name="bookmark-o" color="#05375a" size={20}/>
             <TextInput
               placeholder="Your Username"
               style={styles.textInput}
@@ -158,7 +147,7 @@ const SignUp = ({ navigation }) => {
             />
             {data.check_textInputChange ? (
               <Animatable.View animation="bounceIn">
-                <Feather name="check-circle" color="green" size={20} />
+                <Feather name="check-circle" color="green" size={20}/>
               </Animatable.View>
             ) : null}
           </View>
@@ -174,7 +163,7 @@ const SignUp = ({ navigation }) => {
             Password
           </Text>
           <View style={styles.action}>
-            <Feather name="lock" color="#05375a" size={20} />
+            <Feather name="lock" color="#05375a" size={20}/>
             <TextInput
               placeholder="Your Password"
               secureTextEntry={data.secureTextEntry ? true : false}
@@ -184,9 +173,9 @@ const SignUp = ({ navigation }) => {
             />
             <TouchableOpacity onPress={updateSecureTextEntry}>
               {data.secureTextEntry ? (
-                <Feather name="eye-off" color="grey" size={20} />
+                <Feather name="eye-off" color="grey" size={20}/>
               ) : (
-                <Feather name="eye" color="grey" size={20} />
+                <Feather name="eye" color="grey" size={20}/>
               )}
             </TouchableOpacity>
           </View>
@@ -202,7 +191,7 @@ const SignUp = ({ navigation }) => {
             Confirm Password
           </Text>
           <View style={styles.action}>
-            <Feather name="lock" color="#05375a" size={20} />
+            <Feather name="lock" color="#05375a" size={20}/>
             <TextInput
               placeholder="Confirm Your Password"
               secureTextEntry={data.confirm_secureTextEntry ? true : false}
@@ -212,9 +201,9 @@ const SignUp = ({ navigation }) => {
             />
             <TouchableOpacity onPress={updateConfirmSecureTextEntry}>
               {data.secureTextEntry ? (
-                <Feather name="eye-off" color="grey" size={20} />
+                <Feather name="eye-off" color="grey" size={20}/>
               ) : (
-                <Feather name="eye" color="grey" size={20} />
+                <Feather name="eye" color="grey" size={20}/>
               )}
             </TouchableOpacity>
           </View>
@@ -222,18 +211,19 @@ const SignUp = ({ navigation }) => {
             <Text style={styles.color_textPrivate}>
               By signing up you agree to our
             </Text>
-            <Text style={[styles.color_textPrivate, { fontWeight: "bold" }]}>
+            <Text style={[styles.color_textPrivate, {fontWeight: "bold"}]}>
               {" "}
               Terms of service
             </Text>
             <Text style={styles.color_textPrivate}> and</Text>
-            <Text style={[styles.color_textPrivate, { fontWeight: "bold" }]}>
+            <Text style={[styles.color_textPrivate, {fontWeight: "bold"}]}>
               {" "}
               Privacy policy
             </Text>
           </View>
           <View style={styles.button}>
-            <TouchableOpacity style={styles.signIn} onPress={() => {}}>
+            <TouchableOpacity style={styles.signIn} onPress={() => {
+            }}>
               <LinearGradient
                 colors={["#1f65b5", "#89b9f0"]}
                 style={styles.signIn}

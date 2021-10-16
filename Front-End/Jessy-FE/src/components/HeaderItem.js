@@ -1,19 +1,10 @@
 import React from "react";
-import { View } from "react-native";
-import {
-  Header,
-  Button,
-  Input,
-  Icon,
-  ListItem,
-  Switch,
-  TouchableOpacity,
-} from "react-native-elements";
+import {Header, Icon,} from "react-native-elements";
 
 const HeaderItem = () => {
   return (
     <Header
-      statusBarProps={{ barStyle: "light-content" }}
+      statusBarProps={{barStyle: "light-content"}}
       barStyle="light-content"
       leftComponent={
         <Icon

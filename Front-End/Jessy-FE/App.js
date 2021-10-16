@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { View, ActivityIndicator } from "react-native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import {
-  NavigationContainer,
-  DefaultTheme as NavigationDefaultTheme,
-  DarkTheme as NavigationDarkTheme,
-} from "@react-navigation/native";
+import React, {useEffect, useState} from "react";
+import {ActivityIndicator, View} from "react-native";
+import {createDrawerNavigator} from "@react-navigation/drawer";
+import {NavigationContainer,} from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
@@ -20,8 +15,8 @@ import TourList from "./src/components/TourList";
 import TourGuide from "./src/components/TourGuide";
 
 import RootStackScreen from "./src/components/signup/RootStackScreen";
-import { DrawerContent } from "./src/components/DrawerContent";
-import { AuthContext } from "./src/components/utils/context";
+import {DrawerContent} from "./src/components/DrawerContent";
+import {AuthContext} from "./src/components/utils/context";
 
 const Drawer = createDrawerNavigator();
 
@@ -46,7 +41,7 @@ const App = () => {
       .post(url, credentials)
       .then((response) => {
         const results = response.loginInfo;
-        const { message, status, loginInfo } = results;
+        const {message, status, loginInfo} = results;
 
         setUserNameDB(loginInfo.username);
         setUserTokenDB(loginInfo.token);
@@ -69,7 +64,7 @@ const App = () => {
       .post(url, credentials)
       .then((response) => {
         const results = response.loginInfo;
-        const { message, status, loginInfo } = results;
+        const {message, status, loginInfo} = results;
 
         setUserNameDB(loginInfo.username);
         setUserTokenDB(loginInfo.token);
@@ -77,7 +72,7 @@ const App = () => {
         if (status !== "success") {
           handleMessage(message, status);
         } else {
-          navigation.navigate("Home", { ...loginInfo[0] });
+          navigation.navigate("Home", {...loginInfo[0]});
         }
       })
       .catch((error) => {
@@ -133,7 +128,7 @@ const App = () => {
         } catch (e) {
           console.log(e);
         }
-        dispatch({ type: "LOGIN", id: userNameDB, token: userTokenDB });
+        dispatch({type: "LOGIN", id: userNameDB, token: userTokenDB});
       },
       signOut: async () => {
         try {
@@ -141,7 +136,7 @@ const App = () => {
         } catch (e) {
           console.log(e);
         }
-        dispatch({ type: "LOGOUT" });
+        dispatch({type: "LOGOUT"});
       },
       signUp: () => {
         handleAPIRequestSignUp(credentials);
@@ -165,14 +160,14 @@ const App = () => {
         console.log(e);
       }
       // console.log('user token: ', userToken);
-      dispatch({ type: "RETRIEVE_TOKEN", token: userToken });
+      dispatch({type: "RETRIEVE_TOKEN", token: userToken});
     }, 1000);
   }, []);
 
   if (loginState.isLoading) {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <ActivityIndicator size="large" />
+      <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
+        <ActivityIndicator size="large"/>
       </View>
     );
   }
@@ -184,7 +179,7 @@ const App = () => {
           <Drawer.Navigator
             initialRouteName="Home"
             screenOptions={{
-              headerStyle: { backgroundColor: "#1f65b5" },
+              headerStyle: {backgroundColor: "#1f65b5"},
               headerTintColor: "#fff",
               headerTitleStyle: {
                 fontWeight: "bold",
@@ -192,17 +187,17 @@ const App = () => {
             }}
             drawerContent={(props) => <DrawerContent {...props} />}
           >
-            <Drawer.Screen name="Home" component={HomeScreen} />
-            <Drawer.Screen name="Notifications" component={DrawerScreen} />
-            <Drawer.Screen name="Completed Tours" component={CompletedTours} />
-            <Drawer.Screen name="Ongoing Tours" component={OpeningTours} />
-            <Drawer.Screen name="Feedback" component={FeedBack} />
-            <Drawer.Screen name="Profile" component={Profile} />
-            <Drawer.Screen name="tour-list" component={TourList} />
-            <Drawer.Screen name="tour-guide" component={TourGuide} />
+            <Drawer.Screen name="Home" component={HomeScreen}/>
+            <Drawer.Screen name="Notifications" component={DrawerScreen}/>
+            <Drawer.Screen name="Completed Tours" component={CompletedTours}/>
+            <Drawer.Screen name="Ongoing Tours" component={OpeningTours}/>
+            <Drawer.Screen name="Feedback" component={FeedBack}/>
+            <Drawer.Screen name="Profile" component={Profile}/>
+            <Drawer.Screen name="tour-list" component={TourList}/>
+            <Drawer.Screen name="tour-guide" component={TourGuide}/>
           </Drawer.Navigator>
         ) : (
-          <RootStackScreen />
+          <RootStackScreen/>
         )}
       </NavigationContainer>
     </AuthContext.Provider>

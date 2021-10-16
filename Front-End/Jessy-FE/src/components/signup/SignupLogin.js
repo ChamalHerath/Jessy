@@ -1,24 +1,16 @@
 import React from "react";
-import {
-  Button,
-  View,
-  StyleSheet,
-  Image,
-  Dimensions,
-  Text,
-  TouchableOpacity,
-} from "react-native";
+import {Dimensions, StyleSheet, Text, TouchableOpacity, View,} from "react-native";
 import * as Animatable from "react-native-animatable";
 // import LinearGradient from "react-native-linear-gradient";
 import {LinearGradient} from 'expo-linear-gradient';
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import { useTheme } from "@react-navigation/native";
+import {useTheme} from "@react-navigation/native";
 
-const { height } = Dimensions.get("screen");
+const {height} = Dimensions.get("screen");
 const height_logo = height * 0.2;
 
-const SignupLogin = ({ navigation }) => {
-  const { colors } = useTheme();
+const SignupLogin = ({navigation}) => {
+  const {colors} = useTheme();
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -50,7 +42,7 @@ const SignupLogin = ({ navigation }) => {
               style={styles.signIn}
             >
               <Text style={styles.textSign}>Get started</Text>
-              <MaterialIcons name="navigate-next" color="#fff" size={20} />
+              <MaterialIcons name="navigate-next" color="#fff" size={20}/>
             </LinearGradient>
           </TouchableOpacity>
         </View>
@@ -60,8 +52,6 @@ const SignupLogin = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  button: {},
-
   buttonContainer: {},
 
   imageContainer: {

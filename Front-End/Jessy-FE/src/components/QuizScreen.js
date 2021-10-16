@@ -1,9 +1,8 @@
 import React, {useState} from "react";
-import {FlatList, Image, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View,} from "react-native";
+import {FlatList, Image, StyleSheet, Text, TextInput, TouchableOpacity, View,} from "react-native";
 import axios from "axios";
-import * as Animatable from "react-native-animatable";
 
-const HomeScreen = ({navigation}) => {
+const QuizScreen = ({navigation}) => {
   const [name, setName] = useState("");
   const [locationUser, setLocationUser] = useState("");
   const [location, setLocation] = useState("");
@@ -33,7 +32,7 @@ const HomeScreen = ({navigation}) => {
       })
       .catch((error) => {
         // console.log("error");
-        handleMessage("Error Ocurred Check you Internet Connection");
+        handleMessage("Error Occurred Check you Internet Connection");
       });
   };
 
@@ -43,14 +42,39 @@ const HomeScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Animatable.Image
-        animation="bounceIn"
-        duration={1500}
-        source={require("./Group259.png")}
-        style={styles.logo}
-        resizeMethod="auto"
-      />
-      <Text style={styles.tTextStyle}>Find Your Travel Partner</Text>
+      {/*<Image*/}
+      {/*  source={{*/}
+      {/*    uri: "../assets/images/Group259.png",*/}
+      {/*  }}*/}
+      {/*  size={100}*/}
+      {/*/>*/}
+
+      <Text style={{
+        textTransform: 'uppercase',
+        marginBottom: 100,
+        fontSize: 25,
+        color: 'blue'
+      }}>
+        Select Your favourable
+      </Text>
+
+      <Text style={{
+        textTransform: 'uppercase',
+        marginBottom: 30,
+        fontSize: 20,
+        color: 'black'
+      }}>
+        What is your current location?
+      </Text>
+
+      <Text style={{
+        textTransform: 'uppercase',
+        marginBottom: 20,
+        fontSize: 15,
+        color: 'black'
+      }}>
+        Select the Best tour guide for your tour
+      </Text>
 
       {/*<TextInput*/}
       {/*  placeholder="Insert Name"*/}
@@ -75,15 +99,14 @@ const HomeScreen = ({navigation}) => {
         //   })
         // }
         onPress={() => {
-          // collectingData();
-          navigation.navigate("QuizScreen")
+          collectingData();
         }}
         style={[
           styles.button,
           {
             borderColor: "#1f65b5",
             borderWidth: 1,
-            marginTop: 20,
+            marginTop: 5,
           },
         ]}
       >
@@ -95,7 +118,67 @@ const HomeScreen = ({navigation}) => {
             },
           ]}
         >
-          FIND GUIDES
+          GALLE
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        // onPress={() =>
+        //   navigation.navigate("tour-list", {
+        //     data: HomeScreen.data,
+        //   })
+        // }
+        onPress={() => {
+          collectingData();
+        }}
+        style={[
+          styles.button,
+          {
+            borderColor: "#1f65b5",
+            borderWidth: 1,
+            marginTop: 5,
+          },
+        ]}
+      >
+        <Text
+          style={[
+            styles.textSign,
+            {
+              color: "#1f65b5",
+            },
+          ]}
+        >
+          COLOMBO
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        // onPress={() =>
+        //   navigation.navigate("tour-list", {
+        //     data: HomeScreen.data,
+        //   })
+        // }
+        onPress={() => {
+          collectingData();
+        }}
+        style={[
+          styles.button,
+          {
+            borderColor: "#1f65b5",
+            borderWidth: 1,
+            marginTop: 5,
+          },
+        ]}
+      >
+        <Text
+          style={[
+            styles.textSign,
+            {
+              color: "#1f65b5",
+            },
+          ]}
+        >
+          KANDY
         </Text>
       </TouchableOpacity>
 
@@ -144,13 +227,6 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     color: "#1f65b5",
   },
-
-  tTextStyle: {
-    textTransform: 'uppercase',
-    color: 'blue',
-    fontSize: 20,
-    marginBottom: 10
-  }
 });
 
-export default HomeScreen;
+export default QuizScreen;

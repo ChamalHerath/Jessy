@@ -1,6 +1,6 @@
 import React from "react";
-import { Text } from "react-native";
-import { View } from "react-native-animatable";
+import {Text} from "react-native";
+import {View} from "react-native-animatable";
 
 const OpeningTours = () => {
   return (
