@@ -99,7 +99,8 @@ const QuizScreen = ({navigation}) => {
         //   })
         // }
         onPress={() => {
-          collectingData();
+          // collectingData();
+          navigation.navigate("TourGuideScreen")
         }}
         style={[
           styles.button,

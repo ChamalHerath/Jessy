@@ -1,12 +1,12 @@
 import React from "react";
 import {Text, View} from "react-native";
 
-const TourGuide = () => {
+const TourGuideScreen = () => {
   return (
     <View>
-      <Text></Text>
+      <Text>abc</Text>
     </View>
   );
 };
 
-export default TourGuide;
+export default TourGuideScreen;

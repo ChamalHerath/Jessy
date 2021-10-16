@@ -12,7 +12,7 @@ import OpeningTours from "./src/components/OpeningTours";
 import FeedBack from "./src/components/FeedBack";
 import Profile from "./src/components/Profile";
 import TourList from "./src/components/TourList";
-import TourGuide from "./src/components/TourGuide";
+import TourGuideScreen from "./src/components/TourGuideScreen";
 
 import RootStackScreen from "./src/components/signup/RootStackScreen";
 import {DrawerContent} from "./src/components/DrawerContent";
@@ -194,7 +194,7 @@ const App = () => {
             <Drawer.Screen name="Feedback" component={FeedBack}/>
             <Drawer.Screen name="Profile" component={Profile}/>
             <Drawer.Screen name="tour-list" component={TourList}/>
-            <Drawer.Screen name="tour-guide" component={TourGuide}/>
+            <Drawer.Screen name="tour-guide" component={TourGuideScreen}/>
           </Drawer.Navigator>
         ) : (
           <RootStackScreen/>
