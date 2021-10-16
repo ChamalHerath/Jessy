@@ -51,7 +51,7 @@ export function DrawerContent(props) {
               icon={({color, size}) => (
                 <Icon name="account-outline" color={color} size={size}/>
               )}
-              label="Profile"
+              label="ProfileScreen"
               onPress={() => {
                 props.navigation.navigate("Profile");
               }}

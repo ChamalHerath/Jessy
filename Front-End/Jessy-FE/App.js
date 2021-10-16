@@ -10,7 +10,7 @@ import DrawerScreen from "./src/components/DrawerScreen";
 import CompletedTours from "./src/components/CompletedTours";
 import OpeningTours from "./src/components/OpeningTours";
 import FeedBack from "./src/components/FeedBack";
-import Profile from "./src/components/Profile";
+import ProfileScreen from "./src/components/ProfileScreen";
 import TourList from "./src/components/TourList";
 import TourGuideScreen from "./src/components/TourGuideScreen";
 
@@ -192,7 +192,7 @@ const App = () => {
             <Drawer.Screen name="Completed Tours" component={CompletedTours}/>
             <Drawer.Screen name="Ongoing Tours" component={OpeningTours}/>
             <Drawer.Screen name="Feedback" component={FeedBack}/>
-            <Drawer.Screen name="Profile" component={Profile}/>
+            <Drawer.Screen name="Profile" component={ProfileScreen}/>
             <Drawer.Screen name="tour-list" component={TourList}/>
             <Drawer.Screen name="tour-guide" component={TourGuideScreen}/>
           </Drawer.Navigator>

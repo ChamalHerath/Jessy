@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {StyleSheet, Text, TouchableOpacity, View,} from "react-native";
+import {Platform, StyleSheet, Text, TouchableOpacity, View,} from "react-native";
 import axios from "axios";
 
 const QuizScreen = ({navigation}) => {
