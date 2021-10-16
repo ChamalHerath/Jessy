@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {ActivityIndicator, View} from "react-native";
+import {ActivityIndicator, LogBox, View} from "react-native";
 import {createDrawerNavigator} from "@react-navigation/drawer";
 import {NavigationContainer,} from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -21,6 +21,10 @@ import {AuthContext} from "./src/components/utils/context";
 const Drawer = createDrawerNavigator();
 
 const App = () => {
+  LogBox.ignoreLogs([
+    ""
+  ])
+
   const [userTokenDB, setUserTokenDB] = useState();
   const [userNameDB, setUserNameDB] = useState();
 

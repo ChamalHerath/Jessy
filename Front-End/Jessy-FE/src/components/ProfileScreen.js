@@ -1,7 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Alert, Image, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native'
+import axios from 'axios'
 
 const ProfileScreen = ({navigation}) => {
+  const [title, setTitle] = useState('')
+  const [rating, setRating] = useState(3)
+
+  const onChangeText = text => {
+    setTitle(text)
+  }
+
+  const evaluate = () => {
+    const data = {
+      comment: title.trim()
+    }
+    axios.post('https://seentiment-jessy.herokuapp.com/api/SentimentAnalysis', data).then(response => {
+      setRating(response.data.prediction)
+    }).catch(error => {
+      console.log(error)
+    })
+  }
+
   return (
     <SafeAreaView>
       <ScrollView>
@@ -9,7 +28,7 @@ const ProfileScreen = ({navigation}) => {
           <Text style={{
             color: 'red',
             fontSize: 20,
-            marginVertical: 15
+            marginBottom: 15
           }}>
             Tour Guide
           </Text>
@@ -43,7 +62,7 @@ const ProfileScreen = ({navigation}) => {
                   marginVertical: 1,
                   fontSize: 18
                 }}>
-                  Rating: 5.0
+                  Rating: {rating}.0
                 </Text>
                 <View style={[
                   styles.button,
@@ -88,16 +107,10 @@ const ProfileScreen = ({navigation}) => {
           </Text>
           <TextInput style={styles.multilineTextInputStyle}
                      multiline={true}
+                     onChangeText={title => onChangeText(title)}
+                     value={title}
                      numberOfLines={25}/>
-          <TouchableOpacity onPress={() => {
-            Alert.alert(
-              'SUCCESS',
-              'Feedback sent successfully.',
-              [{
-                text: 'OK'
-              }]
-            )
-          }}
+          <TouchableOpacity onPress={evaluate}
                             style={{
                               flex: 1,
                               paddingHorizontal: 20,
@@ -286,7 +299,7 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   container: {
-    marginVertical: 25,
+    marginVertical: 20,
     paddingHorizontal: 20
   },
   multilineTextInputStyle: {

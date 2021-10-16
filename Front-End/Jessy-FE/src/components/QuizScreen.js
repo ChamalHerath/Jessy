@@ -59,7 +59,6 @@ const QuizScreen = ({navigation}) => {
       </Text>
 
       <Text style={{
-        textTransform: 'uppercase',
         marginBottom: 30,
         fontSize: 20,
         color: 'black'
@@ -68,7 +67,6 @@ const QuizScreen = ({navigation}) => {
       </Text>
 
       <Text style={{
-        textTransform: 'uppercase',
         marginBottom: 20,
         fontSize: 15,
         color: 'black'
