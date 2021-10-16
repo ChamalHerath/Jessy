@@ -1,5 +1,5 @@
-import React from "react";
-import {Alert, Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import React from 'react'
+import {Alert, Image, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native'
 
 const ProfileScreen = ({navigation}) => {
   return (
@@ -25,11 +25,10 @@ const ProfileScreen = ({navigation}) => {
                 <Image style={{
                   marginVertical: 15
                 }}
-                       source={require("./img.png")}
+                       source={require('./img.png')}
                        width={40}
                        height={40}
-                       resizeMethod="auto"
-                />
+                       resizeMethod='auto'/>
               </View>
               <View style={{
                 marginTop: 15
@@ -49,15 +48,15 @@ const ProfileScreen = ({navigation}) => {
                 <View style={[
                   styles.button,
                   {
-                    borderColor: "white",
-                  },
+                    borderColor: 'white'
+                  }
                 ]}>
                   <Text style={[
                     styles.textSign,
                     {
-                      color: "#1f65b5",
+                      color: '#1f65b5',
                       marginTop: 6
-                    },
+                    }
                   ]}>
                     10,000 LKR / Tour
                   </Text>
@@ -73,8 +72,8 @@ const ProfileScreen = ({navigation}) => {
             Guide Description
           </Text>
           <Text style={{
-            color: 'black',
-            fontSize: 16
+            color: '#808080',
+            fontSize: 15
           }}>
             We are going to implement this schedule by creating 20 posts for facebook and 30 various video content from
             different content creators in YouTube. By analyzing the facebook posts published by the facebook page owners
@@ -87,12 +86,17 @@ const ProfileScreen = ({navigation}) => {
           }}>
             Send Feedback
           </Text>
+          <TextInput style={styles.multilineTextInputStyle}
+                     multiline={true}
+                     numberOfLines={25}/>
           <TouchableOpacity onPress={() => {
             Alert.alert(
-              "SUCCESS",
-              "Feedback sent successfully.",
-              [{text: "OK"}]
-            );
+              'SUCCESS',
+              'Feedback sent successfully.',
+              [{
+                text: 'OK'
+              }]
+            )
           }}
                             style={{
                               flex: 1,
@@ -100,7 +104,9 @@ const ProfileScreen = ({navigation}) => {
                               paddingVertical: 10,
                               backgroundColor: 'green',
                               alignItems: 'center',
-                              marginHorizontal: 5
+                              marginHorizontal: 5,
+                              borderRadius: 5,
+                              marginTop: 10,
                             }}>
             <Text style={{
               color: 'white'
@@ -115,11 +121,117 @@ const ProfileScreen = ({navigation}) => {
           }}>
             Previous Feedback
           </Text>
+          <View style={styles.item1}>
+            <View style={{
+              flex: 1,
+              flexDirection: 'row'
+            }}>
+              <View style={{
+                marginHorizontal: 10,
+                marginVertical: 5
+              }}>
+                <Image style={{
+                  marginVertical: 15
+                }}
+                       source={require('./img.png')}
+                       width={20}
+                       height={20}
+                       resizeMethod='auto'/>
+              </View>
+              <View style={{
+                marginTop: 25
+              }}>
+                <Text style={{
+                  marginVertical: 1,
+                  fontSize: 18
+                }}>
+                  Saman Kumara
+                </Text>
+                <Text style={{
+                  marginVertical: 1,
+                  fontSize: 15
+                }}>
+                  One of the Best Tour guide I have ever met.
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View style={styles.item1}>
+            <View style={{
+              flex: 1,
+              flexDirection: 'row'
+            }}>
+              <View style={{
+                marginHorizontal: 10,
+                marginVertical: 2
+              }}>
+                <Image style={{
+                  marginVertical: 15
+                }}
+                       source={require('./img.png')}
+                       width={20}
+                       height={20}
+                       resizeMethod='auto'/>
+              </View>
+              <View style={{
+                marginTop: 25
+              }}>
+                <Text style={{
+                  marginVertical: 1,
+                  fontSize: 18
+                }}>
+                  Saman Kumara
+                </Text>
+                <Text style={{
+                  marginVertical: 1,
+                  fontSize: 15
+                }}>
+                  One of the Best Tour guide I have ever met.
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View style={styles.item1}>
+            <View style={{
+              flex: 1,
+              flexDirection: 'row'
+            }}>
+              <View style={{
+                marginHorizontal: 10,
+                marginVertical: 5
+              }}>
+                <Image style={{
+                  marginVertical: 15
+                }}
+                       source={require('./img.png')}
+                       width={20}
+                       height={20}
+                       resizeMethod='auto'/>
+              </View>
+              <View style={{
+                marginTop: 25
+              }}>
+                <Text style={{
+                  marginVertical: 1,
+                  fontSize: 18
+                }}>
+                  Saman Kumara
+                </Text>
+                <Text style={{
+                  marginVertical: 1,
+                  fontSize: 15
+                }}>
+                  One of the Best Tour guide I have ever met.
+                </Text>
+              </View>
+            </View>
+          </View>
           <View style={{
-            flexDirection: 'row'
+            flexDirection: 'row',
+            marginTop: 20
           }}>
             <TouchableOpacity onPress={() => {
-              navigation.navigate("TourGuideScreen")
+              navigation.navigate('TourGuideScreen')
             }}
                               style={{
                                 flex: 1,
@@ -127,7 +239,8 @@ const ProfileScreen = ({navigation}) => {
                                 paddingVertical: 10,
                                 backgroundColor: 'gray',
                                 alignItems: 'center',
-                                marginHorizontal: 5
+                                marginHorizontal: 5,
+                                borderRadius: 5
                               }}>
               <Text style={{
                 color: 'white'
@@ -137,10 +250,12 @@ const ProfileScreen = ({navigation}) => {
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {
               Alert.alert(
-                "SUCCESS",
-                "Request sent successfully.",
-                [{text: "OK"}]
-              );
+                'SUCCESS',
+                'Request sent successfully.',
+                [{
+                  text: 'OK'
+                }]
+              )
             }}
                               style={{
                                 flex: 1,
@@ -148,7 +263,8 @@ const ProfileScreen = ({navigation}) => {
                                 paddingVertical: 10,
                                 backgroundColor: 'green',
                                 alignItems: 'center',
-                                marginHorizontal: 5
+                                marginHorizontal: 5,
+                                borderRadius: 5
                               }}>
               <Text style={{
                 color: 'white'
@@ -160,18 +276,28 @@ const ProfileScreen = ({navigation}) => {
         </View>
       </ScrollView>
     </SafeAreaView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   button: {
-    width: "100%",
-    justifyContent: "center",
-    borderRadius: 10,
+    width: '100%',
+    justifyContent: 'center',
+    borderRadius: 10
   },
   container: {
     marginVertical: 25,
     paddingHorizontal: 20
+  },
+  multilineTextInputStyle: {
+    textAlignVertical: 'top',
+    borderColor: '#c4c4c4',
+    width: '100%',
+    height: 100,
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 10,
+    color: '#808080'
   },
   item: {
     shadowColor: 'blue',
@@ -188,10 +314,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap'
   },
+  item1: {
+    backgroundColor: '#eae9e9',
+    width: '100%',
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  },
   textSign: {
     fontSize: 14,
-    fontWeight: "bold",
+    fontWeight: 'bold'
   }
-});
+})
 
-export default ProfileScreen;
+export default ProfileScreen
