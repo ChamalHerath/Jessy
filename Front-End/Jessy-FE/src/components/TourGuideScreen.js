@@ -1,6 +1,5 @@
 import React from "react";
 import {Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
-import * as Animatable from "react-native-animatable";
 
 const TourGuideScreen = ({navigation}) => {
   return (
@@ -26,10 +25,10 @@ const TourGuideScreen = ({navigation}) => {
               <Image style={{
                 marginVertical: 15
               }}
-                source={require("./img.png")}
-                width={40}
-                height={40}
-                resizeMethod="auto"
+                     source={require("./img.png")}
+                     width={40}
+                     height={40}
+                     resizeMethod="auto"
               />
               <Text style={{
                 marginVertical: 3,
@@ -44,17 +43,17 @@ const TourGuideScreen = ({navigation}) => {
                 Rating: 5.0
               </Text>
               <TouchableOpacity style={[
-                  styles.button,
+                styles.button,
+                {
+                  borderColor: "white",
+                },
+              ]}>
+                <Text style={[
+                  styles.textSign,
                   {
-                    borderColor: "white",
+                    color: "#1f65b5",
                   },
                 ]}>
-                <Text style={[
-                    styles.textSign,
-                    {
-                      color: "#1f65b5",
-                    },
-                  ]}>
                   View Profile
                 </Text>
               </TouchableOpacity>
