@@ -40,7 +40,7 @@ const TourGuideScreen = ({navigation}) => {
                 marginVertical: 3,
                 fontSize: 18
               }}>
-                Rating: 5.0
+                Rating: 3.0
               </Text>
               <View style={[
                 styles.button,
@@ -85,7 +85,7 @@ const TourGuideScreen = ({navigation}) => {
                 marginVertical: 3,
                 fontSize: 18
               }}>
-                Rating: 5.0
+                Rating: 3.0
               </Text>
               <View style={[
                 styles.button,
@@ -130,7 +130,7 @@ const TourGuideScreen = ({navigation}) => {
                 marginVertical: 3,
                 fontSize: 18
               }}>
-                Rating: 5.0
+                Rating: 3.0
               </Text>
               <View style={[
                 styles.button,
@@ -175,7 +175,7 @@ const TourGuideScreen = ({navigation}) => {
                 marginVertical: 3,
                 fontSize: 18
               }}>
-                Rating: 5.0
+                Rating: 3.0
               </Text>
               <View style={[
                 styles.button,
@@ -220,7 +220,7 @@ const TourGuideScreen = ({navigation}) => {
                 marginVertical: 3,
                 fontSize: 18
               }}>
-                Rating: 5.0
+                Rating: 3.0
               </Text>
               <View style={[
                 styles.button,

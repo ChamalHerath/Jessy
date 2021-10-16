@@ -5,6 +5,9 @@ import axios from 'axios'
 const ProfileScreen = ({navigation}) => {
   const [title, setTitle] = useState('')
   const [rating, setRating] = useState(3)
+  const [dummy, setDummy] = useState([
+    {name: 'saman kumara', comment: 'One of the Best Tour guide I have ever met.'}
+  ])
 
   const onChangeText = text => {
     setTitle(text)
@@ -16,6 +19,7 @@ const ProfileScreen = ({navigation}) => {
     }
     axios.post('https://seentiment-jessy.herokuapp.com/api/SentimentAnalysis', data).then(response => {
       setRating(response.data.prediction)
+      setDummy([...dummy,{name: 'chamal janadara', comment: data.comment}])
     }).catch(error => {
       console.log(error)
     })
@@ -134,111 +138,113 @@ const ProfileScreen = ({navigation}) => {
           }}>
             Previous Feedback
           </Text>
-          <View style={styles.item1}>
-            <View style={{
-              flex: 1,
-              flexDirection: 'row'
-            }}>
+          {dummy.reverse().map(x => (
+            <View style={styles.item1}>
               <View style={{
-                marginHorizontal: 10,
-                marginVertical: 5
+                flex: 1,
+                flexDirection: 'row'
               }}>
-                <Image style={{
-                  marginVertical: 15
-                }}
-                       source={require('./img.png')}
-                       width={20}
-                       height={20}
-                       resizeMethod='auto'/>
-              </View>
-              <View style={{
-                marginTop: 25
-              }}>
-                <Text style={{
-                  marginVertical: 1,
-                  fontSize: 18
+                <View style={{
+                  marginHorizontal: 10,
+                  marginVertical: 5
                 }}>
-                  Saman Kumara
-                </Text>
-                <Text style={{
-                  marginVertical: 1,
-                  fontSize: 15
+                  <Image style={{
+                    marginVertical: 15
+                  }}
+                         source={require('./img.png')}
+                         width={20}
+                         height={20}
+                         resizeMethod='auto'/>
+                </View>
+                <View style={{
+                  marginTop: 25
                 }}>
-                  One of the Best Tour guide I have ever met.
-                </Text>
-              </View>
-            </View>
-          </View>
-          <View style={styles.item1}>
-            <View style={{
-              flex: 1,
-              flexDirection: 'row'
-            }}>
-              <View style={{
-                marginHorizontal: 10,
-                marginVertical: 2
-              }}>
-                <Image style={{
-                  marginVertical: 15
-                }}
-                       source={require('./img.png')}
-                       width={20}
-                       height={20}
-                       resizeMethod='auto'/>
-              </View>
-              <View style={{
-                marginTop: 25
-              }}>
-                <Text style={{
-                  marginVertical: 1,
-                  fontSize: 18
-                }}>
-                  Saman Kumara
-                </Text>
-                <Text style={{
-                  marginVertical: 1,
-                  fontSize: 15
-                }}>
-                  One of the Best Tour guide I have ever met.
-                </Text>
+                  <Text style={{
+                    marginVertical: 1,
+                    fontSize: 18
+                  }}>
+                    {x.name}
+                  </Text>
+                  <Text style={{
+                    marginVertical: 1,
+                    fontSize: 15
+                  }}>
+                    {x.comment}
+                  </Text>
+                </View>
               </View>
             </View>
-          </View>
-          <View style={styles.item1}>
-            <View style={{
-              flex: 1,
-              flexDirection: 'row'
-            }}>
-              <View style={{
-                marginHorizontal: 10,
-                marginVertical: 5
-              }}>
-                <Image style={{
-                  marginVertical: 15
-                }}
-                       source={require('./img.png')}
-                       width={20}
-                       height={20}
-                       resizeMethod='auto'/>
-              </View>
-              <View style={{
-                marginTop: 25
-              }}>
-                <Text style={{
-                  marginVertical: 1,
-                  fontSize: 18
-                }}>
-                  Saman Kumara
-                </Text>
-                <Text style={{
-                  marginVertical: 1,
-                  fontSize: 15
-                }}>
-                  One of the Best Tour guide I have ever met.
-                </Text>
-              </View>
-            </View>
-          </View>
+          ))}
+          {/*<View style={styles.item1}>*/}
+          {/*  <View style={{*/}
+          {/*    flex: 1,*/}
+          {/*    flexDirection: 'row'*/}
+          {/*  }}>*/}
+          {/*    <View style={{*/}
+          {/*      marginHorizontal: 10,*/}
+          {/*      marginVertical: 2*/}
+          {/*    }}>*/}
+          {/*      <Image style={{*/}
+          {/*        marginVertical: 15*/}
+          {/*      }}*/}
+          {/*             source={require('./img.png')}*/}
+          {/*             width={20}*/}
+          {/*             height={20}*/}
+          {/*             resizeMethod='auto'/>*/}
+          {/*    </View>*/}
+          {/*    <View style={{*/}
+          {/*      marginTop: 25*/}
+          {/*    }}>*/}
+          {/*      <Text style={{*/}
+          {/*        marginVertical: 1,*/}
+          {/*        fontSize: 18*/}
+          {/*      }}>*/}
+          {/*        Saman Kumara*/}
+          {/*      </Text>*/}
+          {/*      <Text style={{*/}
+          {/*        marginVertical: 1,*/}
+          {/*        fontSize: 15*/}
+          {/*      }}>*/}
+          {/*        One of the Best Tour guide I have ever met.*/}
+          {/*      </Text>*/}
+          {/*    </View>*/}
+          {/*  </View>*/}
+          {/*</View>*/}
+          {/*<View style={styles.item1}>*/}
+          {/*  <View style={{*/}
+          {/*    flex: 1,*/}
+          {/*    flexDirection: 'row'*/}
+          {/*  }}>*/}
+          {/*    <View style={{*/}
+          {/*      marginHorizontal: 10,*/}
+          {/*      marginVertical: 5*/}
+          {/*    }}>*/}
+          {/*      <Image style={{*/}
+          {/*        marginVertical: 15*/}
+          {/*      }}*/}
+          {/*             source={require('./img.png')}*/}
+          {/*             width={20}*/}
+          {/*             height={20}*/}
+          {/*             resizeMethod='auto'/>*/}
+          {/*    </View>*/}
+          {/*    <View style={{*/}
+          {/*      marginTop: 25*/}
+          {/*    }}>*/}
+          {/*      <Text style={{*/}
+          {/*        marginVertical: 1,*/}
+          {/*        fontSize: 18*/}
+          {/*      }}>*/}
+          {/*        Saman Kumara*/}
+          {/*      </Text>*/}
+          {/*      <Text style={{*/}
+          {/*        marginVertical: 1,*/}
+          {/*        fontSize: 15*/}
+          {/*      }}>*/}
+          {/*        One of the Best Tour guide I have ever met.*/}
+          {/*      </Text>*/}
+          {/*    </View>*/}
+          {/*  </View>*/}
+          {/*</View>*/}
           <View style={{
             flexDirection: 'row',
             marginTop: 20
