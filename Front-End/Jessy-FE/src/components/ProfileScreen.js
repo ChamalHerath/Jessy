@@ -1,5 +1,5 @@
 import React from "react";
-import {Alert, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Alert, Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 
 const ProfileScreen = ({navigation}) => {
   return (
@@ -13,6 +13,58 @@ const ProfileScreen = ({navigation}) => {
           }}>
             Tour Guide
           </Text>
+          <View style={styles.item}>
+            <View style={{
+              flex: 1,
+              flexDirection: 'row'
+            }}>
+              <View style={{
+                marginHorizontal: 20,
+                marginVertical: 10
+              }}>
+                <Image style={{
+                  marginVertical: 15
+                }}
+                       source={require("./img.png")}
+                       width={40}
+                       height={40}
+                       resizeMethod="auto"
+                />
+              </View>
+              <View style={{
+                marginTop: 15
+              }}>
+                <Text style={{
+                  marginVertical: 1,
+                  fontSize: 18
+                }}>
+                  Saman Kumara
+                </Text>
+                <Text style={{
+                  marginVertical: 1,
+                  fontSize: 18
+                }}>
+                  Rating: 5.0
+                </Text>
+                <View style={[
+                  styles.button,
+                  {
+                    borderColor: "white",
+                  },
+                ]}>
+                  <Text style={[
+                    styles.textSign,
+                    {
+                      color: "#1f65b5",
+                      marginTop: 6
+                    },
+                  ]}>
+                    10,000 LKR / Tour
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
           <Text style={{
             color: 'black',
             fontSize: 18,
@@ -114,9 +166,7 @@ const ProfileScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   button: {
     width: "100%",
-    height: 50,
     justifyContent: "center",
-    alignItems: "center",
     borderRadius: 10,
   },
   container: {
@@ -134,25 +184,14 @@ const styles = StyleSheet.create({
     elevation: 5,
     borderRadius: 10,
     backgroundColor: 'white',
-    height: 200,
     width: '100%',
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    borderTopRightRadius: 10,
-    borderBottomRightRadius: 10,
-    borderLeftWidth: 6,
-    borderTopLeftRadius: 5,
-    borderBottomLeftRadius: 5,
-    borderLeftColor: 'blue',
-    marginVertical: 10,
-    marginHorizontal: 10,
-    paddingHorizontal: 10
+    flexWrap: 'wrap'
   },
   textSign: {
     fontSize: 14,
     fontWeight: "bold",
-  },
-
+  }
 });
 
 export default ProfileScreen;
