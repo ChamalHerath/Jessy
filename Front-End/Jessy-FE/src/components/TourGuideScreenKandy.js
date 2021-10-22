@@ -35,7 +35,7 @@ const TourGuideScreenKandy = ({navigation}) => {
                 marginVertical: 3,
                 fontSize: 18
               }}>
-                KUMARA DHARMARATNE
+                VISIT SRI LANKA
               </Text>
               <Text style={{
                 marginVertical: 3,
@@ -49,14 +49,14 @@ const TourGuideScreenKandy = ({navigation}) => {
                 fontSize: 16,
                 color: "blue"
               }}>
-                Language : German
+                Language : English
               </Text>
               <Text style={{
                 marginVertical: 3,
                 fontSize: 16,
                 color: "blue"
               }}>
-                Reg. No : N-0463
+                Reg. No : N-0356
               </Text>
               <View style={[
                 styles.button,

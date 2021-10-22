@@ -78,6 +78,67 @@ const TourGuideScreen = ({navigation}) => {
 
           <TouchableOpacity style={styles.item}
                             onPress={() => {
+                              navigation.navigate("ProfileScreenKandy")
+                            }}>
+            <View style={{
+              alignItems: 'center',
+              flex: 1
+            }}>
+              <Image style={{
+                marginVertical: 15
+              }}
+                     source={require("./user.png")}
+                     width={40}
+                     height={40}
+                     resizeMethod="auto"
+              />
+              <Text style={{
+                marginVertical: 3,
+                fontSize: 18
+              }}>
+                VISIT SRI LANKA
+              </Text>
+              <Text style={{
+                marginVertical: 3,
+                fontSize: 15,
+                color: "red"
+              }}>
+                Rating: 5.0
+              </Text>
+              <Text style={{
+                marginVertical: 3,
+                fontSize: 16,
+                color: "blue"
+              }}>
+                Language : English
+              </Text>
+              <Text style={{
+                marginVertical: 3,
+                fontSize: 16,
+                color: "blue"
+              }}>
+                Reg. No : N-0356
+              </Text>
+              <View style={[
+                styles.button,
+                {
+                  borderColor: "white",
+                },
+              ]}>
+                <Text style={[
+                  styles.textSign,
+                  {
+                    color: "#1f65b5",
+                  },
+                ]}>
+                  View Profile
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.item}
+                            onPress={() => {
                               navigation.navigate("ProfileScreen1")
                             }}>
             <View style={{

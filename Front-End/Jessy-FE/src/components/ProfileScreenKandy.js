@@ -6,7 +6,8 @@ const ProfileScreenKandy = ({navigation}) => {
   const [title, setTitle] = useState('')
   const [rating, setRating] = useState(5)
   const [dummy, setDummy] = useState([
-    {name: 'Danny Jonson', comment: 'One of the Best Tour guide I have ever met.'}
+    {name: 'Danny Jonson', comment: 'One of the Best Tour guide community I have ever met.'},
+    {name: 'Mark Wilson', comment: 'Great Service. Higly Recommended.'}
   ])
 
   const onChangeText = text => {
@@ -60,11 +61,12 @@ const ProfileScreenKandy = ({navigation}) => {
                   marginVertical: 1,
                   fontSize: 18
                 }}>
-                  KUMARA DHARMARATNE
+                  VISIT SRI LANKA
                 </Text>
                 <Text style={{
                   marginVertical: 1,
-                  fontSize: 18
+                  fontSize: 15,
+                color: "red"
                 }}>
                   Rating: {rating}.0
                 </Text>
@@ -98,7 +100,7 @@ const ProfileScreenKandy = ({navigation}) => {
             color: '#808080',
             fontSize: 15
           }}>
-            Tour guides lead visitors, individually or in groups, on tours less than a day in length. Tour guides ensure that itineraries are met and that customers are being informed in an entertaining manner the location they are touring. They are also responsible for ensuring the safety of the group and ensuring that tour groups remain together.
+            Visit Sri Lanka - Helping you to find the best of #SriLanka.
           </Text>
           <Text style={{
             color: 'black',
@@ -149,7 +151,7 @@ const ProfileScreenKandy = ({navigation}) => {
                   <Image style={{
                     marginVertical: 15
                   }}
-                         source={require('./img.png')}
+                         source={require('./user.png')}
                          width={20}
                          height={20}
                          resizeMethod='auto'/>

@@ -17,7 +17,7 @@ const TourList = ({navigation}) => {
 
           <TouchableOpacity style={styles.item}
                             onPress={() => {
-                              navigation.navigate("ProfileScreen")
+                              navigation.navigate("")
                             }}>
             <View style={{
               alignItems: 'center',
@@ -33,30 +33,17 @@ const TourList = ({navigation}) => {
               />
               <Text style={{
                 marginVertical: 3,
-                fontSize: 18
+                fontSize: 18,
+                fontWeight: "bold"
               }}>
-                MUDIYANSELAGE JAYATILAKA
-              </Text>
-              <Text style={{
-                marginVertical: 3,
-                fontSize: 15,
-                color: "red"
-              }}>
-                Rating: 5.0
+                Chamal Janadara
               </Text>
               <Text style={{
                 marginVertical: 3,
                 fontSize: 16,
                 color: "blue"
               }}>
-                Language : English
-              </Text>
-              <Text style={{
-                marginVertical: 3,
-                fontSize: 16,
-                color: "blue"
-              }}>
-                Reg. No : N-o460
+                Requesting for you as his Tour Guide
               </Text>
               <View style={[
                 styles.button,
@@ -64,14 +51,49 @@ const TourList = ({navigation}) => {
                   borderColor: "white",
                 },
               ]}>
-                <Text style={[
-                  styles.textSign,
-                  {
-                    color: "#1f65b5",
-                  },
-                ]}>
-                  View Profile
-                </Text>
+                <TouchableOpacity onPress={() => {
+              navigation.navigate('Categories')
+            }}
+                              style={{
+                                flex: 1,
+                                margin: 20,
+                                paddingHorizontal: 20,
+                                paddingVertical: 10,
+                                backgroundColor: 'green',
+                                alignItems: 'center',
+                                marginHorizontal: 5,
+                                borderRadius: 5
+                              }}>
+              <Text style={{
+                color: 'white'
+              }}>
+                ACCEPT
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+              Alert.alert(
+                'SUCCESS',
+                'Contact Details Send Successfully',
+                [{
+                  text: 'OK'
+                }]
+              )
+            }}
+                              style={{
+                                flex: 1,
+                                paddingHorizontal: 20,
+                                paddingVertical: 10,
+                                backgroundColor: 'red',
+                                alignItems: 'center',
+                                marginHorizontal: 5,
+                                borderRadius: 5
+                              }}>
+              <Text style={{
+                color: 'white'
+              }}>
+                REJECT
+              </Text>
+            </TouchableOpacity>
               </View>
             </View>
           </TouchableOpacity>
@@ -106,6 +128,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: 'white',
     width: '100%',
+    height: 250,
     flexDirection: 'row',
     flexWrap: 'wrap',
     borderTopRightRadius: 10,
@@ -121,6 +144,7 @@ const styles = StyleSheet.create({
   textSign: {
     fontSize: 14,
     fontWeight: "bold",
+    margin: 5
   },
 
 });
