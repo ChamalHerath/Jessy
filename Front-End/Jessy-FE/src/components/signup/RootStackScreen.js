@@ -20,6 +20,7 @@ import Categories from "../Categories";
 import TourList from "../TourList";
 import SignInGuide from "./SignInGuide";
 import SignUpGuide from "./SignUpGuide";
+import AllCategories from "../AllCategories";
 
 const RootStack = createStackNavigator();
 
@@ -43,6 +44,7 @@ const RootStackScreen = ({navigation}) => (
     <RootStack.Screen name="TourList" component={TourList}/>
     <RootStack.Screen name="SignInGuide" component={SignInGuide}/>
     <RootStack.Screen name="SignUpGuide" component={SignUpGuide}/>
+    <RootStack.Screen name="AllCategories" component={AllCategories}/>
   </RootStack.Navigator>
 );
 

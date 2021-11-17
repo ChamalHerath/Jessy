@@ -132,7 +132,7 @@ const SignIn = ({navigation}) => {
     //   return;
     // }
 
-    navigation.navigate("HomeScreen")
+    navigation.navigate("AllCategories")
   };
 
   return (
